@@ -1,6 +1,8 @@
 # Image of workspace. Learn more: https://www.gitpod.io/docs/configure/workspaces/workspace-image
-image: 
-  file: .gitpod.Dockerfile
+# image: 
+#   file: .gitpod.Dockerfile
+
+image: gitpod/workspace-full
 
 # gitpod/workspace-full:2023-10-13-16-25-39
 
@@ -9,6 +11,7 @@ tasks:
   - name: Script Task
     init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
     command: echo 'start script'
+  - before: sdk install java 21-amzn < /dev/null
 
 # List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
 ports:
